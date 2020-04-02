@@ -20,7 +20,9 @@ export class QuizhomeComponent implements OnInit, AfterViewInit {
   public quizCount = 0;
   @Output() isSubmitted = new EventEmitter();
   public isSubmitBtnClicked = false;
-  public config = {};
+  public config = {
+    allowBack: false
+  };
   myRef: any;
 
   /*
@@ -36,7 +38,7 @@ export class QuizhomeComponent implements OnInit, AfterViewInit {
     private sharedSrv: SharedService
   ) {
     this.getDataLists();
-    this.setCOnfig();
+    this.setConfig();
   }
 
   ngOnInit() {
@@ -46,7 +48,7 @@ export class QuizhomeComponent implements OnInit, AfterViewInit {
 
   }
 
-  setCOnfig() {
+  setConfig() {
     this.config = {
       allowBack: true
     };
